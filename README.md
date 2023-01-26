@@ -1,7 +1,7 @@
 Whats up buddy!!
 So the first step is to download this file by clicking the green "code" button and then
 Click "Download ZIP"
-Once the file is download right click it and then click "extract to a specific folder"
+Once the file is downloaded, right click it and then click "extract to a specific folder"
 chose where you want the file to be and then click "ok"
 after that follow these steps.
 
