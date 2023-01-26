@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "youtube-Mp3",
+    "version": "1.0",
+    "description": "converts youtube URL to an MP3 file",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["style.css"],
+            "js": ["app.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {"48": "icon.png"}
+    },
+    "permissions": [
+        "scripting"
+        ]
+}
