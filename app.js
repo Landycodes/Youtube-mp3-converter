@@ -1,7 +1,6 @@
 const url = document.getElementById("url");
 const btn = document.getElementById("button");
 
-//GIVES ERROR 429 ON GET REQUEST. NEED TO UPDATE MANIFEST TO VERSION 3. FIX ERROR HANDLING
 const sendIt = (event) => {
   event.preventDefault();
   const URL = encodeURIComponent(url.value);
@@ -21,19 +20,29 @@ const sendIt = (event) => {
       .then((response) => {
         const API = response.YoutubeAPI;
         console.log(API);
-        url.value = "";
+
         if (API === false || API === null || API === undefined) {
           btn.style.backgroundColor = "red";
-          btn.innerText = "Couldn't find file";
+          btn.innerText = "Something went wrong :(";
           setInterval(() => {
             location.reload();
             return;
           }, 3000);
-          return;
         }
-        btn.style.backgroundColor = "green";
+
         btn.insertAdjacentText("beforebegin", `${API.titolo}`);
-        btn.outerHTML = `<br> <a href="${API.urlMp3}"><button type="button" id="button">Download</button></a>`;
+        if (API.urlMp3) {
+          btn.outerHTML = `<br> <a href="${API.urlMp3}"><button class="btn btn-success btn-sm m-1 mt-2 p-0 pl-1 pr-1" type="button" id="button">Download</button></a>`;
+        } else {
+          btn.style.backgroundColor = "red";
+          btn.innerText = "oops! Try again";
+          setInterval(() => {
+            location.reload();
+            return;
+          }, 3000);
+        }
+
+        url.value = "";
       })
       .catch((err) => {
         console.error(err);
@@ -46,7 +55,5 @@ const sendIt = (event) => {
       });
   };
   response();
-
-  // response.YoutubeAPI.urlMp3
 };
 btn.addEventListener("click", sendIt);
