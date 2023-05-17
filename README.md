@@ -13,11 +13,21 @@ after that follow these steps.
 5. And thats it!! Click on the puzzle piece next to the search bar and this extension will be on that menu
 
 IMPORTANT NOTES
+<br> 
+
 ** This app is limited to 50 searches a day
+<br>
+
 ** Sometimes it will take a few tries to download
+<br>
+
 ** Some URLs my not work at all
+<br>
+
 ** If you get stuck close the extension and re-open it
-\*\* If you have any other issues let me know!
+<br>
+
+** If you have any other issues let me know!
 
 Made with love <3
 -Landycodes
